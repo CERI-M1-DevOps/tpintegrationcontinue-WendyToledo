@@ -5,17 +5,17 @@ on:
       - main
       
 jobs: 
+  Test_and_Package:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Java
         uses: actions/setup-java@v4
-         with:
-           java-version: 21
-           distribution: correto
+        with:
+          java-version: '21'
+          distribution: 'correto'
 
       - name: Build maven package
         run: mvn –B package
