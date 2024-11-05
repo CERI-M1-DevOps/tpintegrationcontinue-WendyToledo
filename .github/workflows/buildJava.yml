@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '21'
-          distribution: 'correto'
+          distribution: 'corretto'
 
       - name: Build maven package
         run: mvn –B package
