@@ -49,6 +49,7 @@ public class ListeSimpleTest {
         listeATester.ajout(1);
         listeATester.ajout(2);
         listeATester.ajout(3);
+        assertEquals(3, listeATester.getSize());
         System.out.println(listeATester);
     }
 
@@ -75,7 +76,7 @@ public class ListeSimpleTest {
 
     @Test
     public void supprimePremierListeVide() {
-        listeATester.supprimePremier(1);
+        listeATester.supprimePremier();
         assertNull(listeATester.tete);
         assertEquals(0, listeATester.getSize());
     }
