@@ -15,7 +15,7 @@ public class ListeSimple {
 
     public void modifiePremier(Object element, Object nouvelleValeur) {
         Noeud courant = tete;
-        while (courant != null && courant.getElement() != element)
+        while (courant != null && !courant.getElement().equals(element))
             courant = courant.getSuivant();
         if (courant != null)
             courant.setElement(nouvelleValeur);
@@ -68,16 +68,17 @@ public class ListeSimple {
     }
 
     public Noeud supprimeTousRecurs(Object element, Noeud tete) {
-        if (tete != null) {
-            Noeud suiteListe = supprimeTousRecurs(element, tete.getSuivant());
-            if (tete.getElement() == element) {
-                size--;
-                return suiteListe;
-            } else {
-                tete.setSuivant(suiteListe);
-                return tete;
-            }
-        } else return null;
+        if( tete == null){
+            return null;
+        }
+        Noeud suiteListe = supprimeTousRecurs(element, tete.getSuivant());
+        if (tete.getElement() == element) {
+            size--;
+            return suiteListe;
+        } else {
+            tete.setSuivant(suiteListe);
+            return tete;
+        }
     }
 
     public Noeud getAvantDernier() {
