@@ -72,7 +72,7 @@ public class ListeSimple {
             return null;
         }
         Noeud suiteListe = supprimeTousRecurs(element, tete.getSuivant());
-        iif (tete != null) {
+        if (tete != null) {
             Noeud suiteListe = supprimeTousRecurs(element, tete.getSuivant());
             if (tete.getElement() == element) {
                 size--;
