@@ -49,8 +49,9 @@ public class ListeSimpleTest {
         listeATester.ajout(1);
         listeATester.ajout(2);
         listeATester.ajout(3);
-        assertEquals(3, listeATester.getSize());
         System.out.println(listeATester);
+        assertEquals(3, listeATester.getSize());
+        
     }
 
     @Test
