@@ -76,6 +76,12 @@ class ListeSimpleTest {
     }
 
     @Test
+    void modifierPremierListeVide(){
+        listeATester.modifiePremier(1, 4);
+        assertEquals("ListeSimple()", listeATester.toString());
+    }
+
+    @Test
     void supprimePremierListeVide() {
         listeATester.supprimePremier(1);
         assertNull(listeATester.tete);
@@ -161,6 +167,15 @@ class ListeSimpleTest {
         assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
         assertEquals(2, listeATester.getSize());
     }
+
+    @Test
+    void supprimeLePremierEnDernierElementInexistant(){
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        listeATester.supprimePreimer(3);
+        assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
+        assertEquals(2, listeATester.getSize());
+        
 
     @Test
     void avantDernierListeVide() {
@@ -257,4 +272,16 @@ class ListeSimpleTest {
         System.out.println(listeATester);
         assertEquals("ListeSimple(Noeud(4), Noeud(2), Noeud(3), Noeud(1), Noeud(5))", listeATester.toString());
     }
+    @Test
+    void echangerLePremierAvecLePremier(){
+        listeATester.ajout(5);
+        listeATester.ajout(4);
+        Noeud r1 = listeATester.tete;
+        listeATester.ajout(3);
+        listeATester.ajout(2);
+        listeATester.ajout(1);
+        assertEquals("ListeSimple(Noeud(1), Noeud(2), Noeud(3), Noeud(4), Noeud(5))", listeATester.toString());
+        listeATester.echanger(r1, r1);
+        System.out.println(listeATester);
+        assertEquals("ListeSimple(Noeud(1), Noeud(2), Noeud(3), Noeud(4), Noeud(5))", listeATester.toString());
 }
