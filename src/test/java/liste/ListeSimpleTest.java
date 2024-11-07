@@ -172,7 +172,7 @@ class ListeSimpleTest {
     void supprimeLePremierEnDernierElementInexistant(){
         listeATester.ajout(1);
         listeATester.ajout(2);
-        listeATester.supprimePreimer(3);
+        listeATester.supprimePremier(3);
         assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
         assertEquals(2, listeATester.getSize());
     }    
