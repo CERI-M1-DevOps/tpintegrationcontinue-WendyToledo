@@ -5,7 +5,8 @@ on:
       - main
       
 jobs: 
-  Test_and_Package:
+  JavaCI:
+    name: JavaCI
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,6 +20,5 @@ jobs:
 
       - name: Build maven package
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=CERI-M1-DevOps_tpintegrationcontinue-WendyToledo
