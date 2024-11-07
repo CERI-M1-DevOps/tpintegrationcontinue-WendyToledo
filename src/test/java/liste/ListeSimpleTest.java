@@ -175,7 +175,7 @@ class ListeSimpleTest {
         listeATester.supprimePreimer(3);
         assertEquals("ListeSimple(Noeud(2), Noeud(1))", listeATester.toString());
         assertEquals(2, listeATester.getSize());
-        
+    }    
 
     @Test
     void avantDernierListeVide() {
