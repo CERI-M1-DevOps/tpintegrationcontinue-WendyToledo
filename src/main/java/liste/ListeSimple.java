@@ -50,7 +50,7 @@ public class ListeSimple {
 
     /**
     * renvoie la liste sous forme de chaîne
-    * @RETURN Lliste sous forne de chaîne de caractère
+    * @return Lliste sous forne de chaîne de caractère
     */
     public String toString() {
         StringBuilder sb = new StringBuilder("ListeSimple(");
